@@ -1,6 +1,6 @@
-# automerger-action
+# action-automerger
 
-GitHub action to automatically merge the source branch into a target branch every time a change is made. A webhook can be configured to send both a successful or failure notification to Slack.
+GitHub action to automatically merge the source branch into a target branch.
 
 ## Inputs
 
@@ -12,9 +12,9 @@ GitHub action to automatically merge the source branch into a target branch ever
 
 **Required** Target branch for the merge
 
-### `webhook_url`
+### `message`
 
-**Optional** The Slack webhook URL to post to.
+**Optional** The commit message to use when merging.
 
 
 ## Example usage
@@ -34,18 +34,11 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
+
       - name: merge
-        uses: mtanzi/automerger-action@v1
-        id: merge
+        uses: richard-scott/action-automerger@v1.0.3
         with:
           github_token: ${{ github.token }}
           source: 'master'
           target: 'release'
-          webhook_url: #if present add the Slack webhook
-```
-
-## Build
-
-```bash
-npm run-script build
-```
+          message: "${{ github.event.commits[0].message }}"
