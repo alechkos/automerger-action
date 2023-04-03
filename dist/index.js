@@ -74541,7 +74541,7 @@ async function merge(source, target, message) {
     repo: repo.repo,
     base: target,
     head: source,
-    commit_message: `Merged '${source}' into '${target}'.`
+    commit_message: message
   })
 }
 

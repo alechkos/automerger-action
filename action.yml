@@ -1,4 +1,4 @@
-name: "Automerger-Action"
+name: "Action-Automerge"
 description: "Merge source branch into target branch."
 inputs:
   message:
