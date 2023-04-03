@@ -1,5 +1,5 @@
 {
-  "name": "action-automerge",
+  "name": "automerger-action",
   "version": "1.0.2",
   "description": "This action automerge the source branch into the target branch.",
   "main": "src/index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mtanzi/action-automerge.git"
+    "url": "git+https://github.com/mtanzi/automerger-action.git"
   },
   "keywords": [
     "actions",
